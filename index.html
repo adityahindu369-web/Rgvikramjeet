@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RG Vikramjeet</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family: Arial, sans-serif;
+    background:#0b0f1a;
+    color:white;
+}
+
+/* SPLASH */
+.splash{
+    position:fixed;
+    inset:0;
+    background:#0b0f1a;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    z-index:100;
+}
+.splash img{width:120px;}
+.bar{
+    width:60%;
+    height:5px;
+    background:#222;
+    margin-top:20px;
+    border-radius:10px;
+    overflow:hidden;
+}
+.bar span{
+    display:block;
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#6a5cff,#00e0ff);
+    animation:load 2s forwards;
+}
+@keyframes load{to{width:100%;}}
+
+/* HEADER */
+header{
+    display:flex;
+    align-items:center;
+    padding:15px;
+    background:#11162a;
+}
+header h2{margin:auto;}
+.menu{
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* DRAWER */
+.drawer{
+    position:fixed;
+    top:0;
+    left:-260px;
+    width:260px;
+    height:100%;
+    background:#0f152b;
+    padding:20px;
+    transition:.3s;
+}
+.drawer a{
+    display:block;
+    padding:12px;
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+}
+.drawer a:hover{background:#1b2350;border-radius:8px;}
+.join{
+    margin-top:20px;
+    background:#25d366;
+    text-align:center;
+    border-radius:30px;
+}
+
+/* CARD */
+.card{
+    background:#11162a;
+    margin:20px;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+}
+.card img{width:80px;}
+.btns{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+.btn{
+    flex:1;
+    padding:12px;
+    border-radius:12px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+.download{background:#6a5cff;}
+.study{background:#00c9a7;}
+</style>
+</head>
+
+<body>
+
+<!-- SPLASH 1 -->
+<div class="splash" id="s1">
+    <img src="logo.png">
+    <div class="bar"><span></span></div>
+</div>
+
+<!-- SPLASH 2 -->
+<div class="splash" id="s2" style="display:none;">
+    <img src="logo.png">
+    <p style="margin-top:15px;">Unlock the Universe of Apps</p>
+</div>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+    <a href="#">🏠 Home</a>
+    <a href="#">📱 Apps</a>
+    <a href="#">ℹ About</a>
+    <a href="#">💬 Contact</a>
+    <a class="join" href="#">Join Channel</a>
+</div>
+
+<!-- MAIN -->
+<header>
+    <span class="menu" onclick="toggle()">☰</span>
+    <h2>RG Vikramjeet</h2>
+</header>
+
+<div class="card">
+    <img src="logo.png">
+    <h3>Vidyakul MOD APK</h3>
+    <p>v10.21.6 • 21 MB</p>
+
+    <div class="btns">
+        <a class="btn download" href="#">Download</a>
+        <a class="btn study" href="#">Let's Study</a>
+    </div>
+</div>
+
+<script>
+setTimeout(()=>{
+    s1.style.display="none";
+    s2.style.display="flex";
+},2000);
+
+setTimeout(()=>{
+    s2.style.display="none";
+},4000);
+
+function toggle(){
+    drawer.style.left = drawer.style.left=="0px" ? "-260px" : "0px";
+}
+</script>
+
+</body>
+  </html>
